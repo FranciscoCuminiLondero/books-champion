@@ -1,4 +1,5 @@
 import React from 'react';
+import { Badge, Card, Button } from 'react-bootstrap';
 
 const BookItem = ({
   title,
@@ -9,14 +10,29 @@ const BookItem = ({
   imageUrl,
 }) => {
   return (
-    <div>
-      <img src={imageUrl} alt={title} className="image" />
-      <h2>{title}</h2>
-      <h3>{author}</h3>
+    <Card style={{ width: '22rem' }} className="mx-3">
+      <Card.Img
+        height={400}
+        variant="top"
+        src={imageUrl}
+        alt={title}
+        className="image"
+      />
+      <Card.Body>
+        <div className="mb-2">
+          {available ? (
+            <Badge bg="success">Disponible</Badge>
+          ) : (
+            <Badge bg="danger">No disponible</Badge>
+          )}
+        </div>
+        <Card.Title>{title}</Card.Title>
+      </Card.Body>
+      <Card.Subtitle>{author}</Card.Subtitle>
       <div>{raiting}</div>
       <p>{pageCount} páginas</p>
-      <p>{available ? 'Disponible' : 'Reservado'}</p>
-    </div>
+      <Button>Actualizar titulo</Button>
+    </Card>
   );
 };
 
