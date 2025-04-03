@@ -27,11 +27,11 @@ const BookItem = ({
           )}
         </div>
         <Card.Title>{title}</Card.Title>
+        <Card.Subtitle>{author}</Card.Subtitle>
+        <div>{raiting}</div>
+        <p>{pageCount} páginas</p>
+        <Button>Actualizar titulo</Button>
       </Card.Body>
-      <Card.Subtitle>{author}</Card.Subtitle>
-      <div>{raiting}</div>
-      <p>{pageCount} páginas</p>
-      <Button>Actualizar titulo</Button>
     </Card>
   );
 };
